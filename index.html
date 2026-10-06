@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ercan Auto Body | Premium Crash Repair in London</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e53935;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #e53935;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), 
+                        url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #cccccc;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 40px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #1a1a1a;
+        }
+
+        .services h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #e53935;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #242424;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #aaaaaa;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            color: #888;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .lang-hint {
+            font-size: 12px;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        /* Language toggle in header */
+        .lang-switch {
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ERCAN <span>AUTO BODY</span></div>
+        <div class="lang-switch">EN | <span style="color:#666">TR</span></div>
+    </header>
+
+    <section class="hero">
+        <h1>Precision Paint.<br>Perfect Finish.</h1>
+        <p>Professional, fast, and reliable crash repair in London. Send us a photo of the damage, and let Ercan Usta restore your car to its original glory.</p>
+        
+        <!-- BURAYA BABANIN NUMARASINI YAZACAKSIN (Örn: 447123456789) -->
+        <a href="https://wa.me/447XXXXXXXXX?text=Hello%20Ercan%20Usta,%20I%20would%20like%20to%20get%20a%20quote%20for%20my%20car." target="_blank" class="whatsapp-btn">
+            Get a Free Quote via WhatsApp
+        </a>
+    </section>
+
+    <section class="services">
+        <h2>Our Specialized Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <h3>Crash Repair</h3>
+                <p>Complete structural and aesthetic restoration after an accident. We make it look like it never happened.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Dent & Scratch Removal</h3>
+                <p>Seamless removal of annoying dents, dings, and deep scratches to perfection.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Full Resprays</h3>
+                <p>Flawless color matching and high-quality paint finishing for showroom quality.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Contact Ercan Auto Body</strong></p>
+        <!-- BURAYA DÜKKANIN ADRESİNİ YAZACAKSIN -->
+        <p>Location: London, UK [Add Your Full Address Here]</p>
+        <p>Mon - Sat: 08:00 AM - 06:00 PM</p>
+        <p class="lang-hint">© 2026 Ercan Auto Body. All Rights Reserved. (Ercan Usta)</p>
+    </footer>
+
+</body>
+</html>
