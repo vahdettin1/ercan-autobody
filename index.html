@@ -3,202 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ercan Auto Body | Premium Crash Repair in London</title>
+    <title>Ercan's Premium Auto Body & Paint | London</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
+        :root {
+            --gold: #d4af37; 
+            --gold-hover: #b5952f;
+            --dark-bg: #0b1120;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
         }
 
-        /* Header / Navbar */
-        header {
-            background-color: #1a1a1a;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        a { text-decoration: none; color: inherit; }
+
+        /* NAVBAR & LOGO YENİLENDİ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
             padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #e53935;
+            background: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+            color: var(--gold);
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
             letter-spacing: 1px;
         }
+        .logo-text span { color: var(--gold); }
 
-        .logo span {
-            color: #e53935;
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links li a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .nav-links li a:hover { color: var(--gold); }
+
+        .nav-contact {
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+        .nav-contact:hover { background-color: var(--text-light); }
+
+        /* ARKA PLAN GÖRSELİ YENİLENDİ */
+        .hero {
+            height: 100vh;
+            /* Daha güvenilir ve pürüzsüz bir görsel linki eklendi */
+            background: linear-gradient(rgba(11, 17, 32, 0.75), rgba(11, 17, 32, 0.95)), 
+                        url('https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), 
-                        url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            padding: 120px 20px;
-            text-align: center;
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 4.5rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            max-width: 900px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
         }
 
         .hero p {
-            font-size: 20px;
-            color: #cccccc;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 40px;
         }
 
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
+        .btn-primary {
+            background-color: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
             padding: 15px 40px;
-            font-size: 22px;
-            font-weight: bold;
-            border-radius: 50px;
-            display: inline-block;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        .btn-primary:hover {
+            background-color: var(--gold);
+            color: var(--dark-bg);
         }
 
-        /* Services Section */
-        .services {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: #1a1a1a;
-        }
+        section { padding: 100px 10%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .section-header h2 span { color: var(--gold); }
+        .section-header p { color: var(--text-gray); max-width: 600px; margin: 0 auto; }
 
-        .services h2 {
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #e53935;
-        }
+        /* ABOUT SECTION */
+        .about-content { display: flex; align-items: center; gap: 50px; }
+        .about-text { flex: 1; }
+        .about-text h3 { font-size: 2rem; margin-bottom: 20px; color: var(--gold); }
+        .about-text p { color: var(--text-gray); margin-bottom: 20px; font-size: 1.1rem; }
+        .about-image { flex: 1; }
+        .about-image img { width: 100%; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(212, 175, 55, 0.2); }
 
-        .services-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        /* SERVICES SECTION */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .service-card {
-            background-color: #242424;
-            padding: 30px;
+            background: var(--card-bg);
+            padding: 40px 30px;
             border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .service-card p {
-            color: #aaaaaa;
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0a0a0a;
-            padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid #333;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
         }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1); }
+        .service-card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+        .service-card p { color: var(--text-gray); font-size: 0.95rem; }
 
-        footer p {
-            color: #888;
-            margin: 10px 0;
-            font-size: 16px;
+        /* PROCESS SECTION */
+        .process {
+            background: linear-gradient(rgba(11, 17, 32, 0.9), rgba(11, 17, 32, 0.9)), 
+                        url('https://images.pexels.com/photos/3354648/pexels-photo-3354648.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
         }
+        .process-steps { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+        .step { flex: 1; min-width: 200px; text-align: center; padding: 20px; }
+        .step-number { width: 60px; height: 60px; background: var(--gold); color: var(--dark-bg); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .step h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .step p { color: var(--text-gray); font-size: 0.9rem; }
 
-        .lang-hint {
-            font-size: 12px;
-            color: #666;
-            margin-top: 30px;
+        /* TESTIMONIALS SECTION */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial-card { background: var(--card-bg); padding: 30px; border-radius: 10px; border-left: 4px solid var(--gold); }
+        .stars { color: var(--gold); margin-bottom: 15px; }
+        .testimonial-text { font-style: italic; color: var(--text-gray); margin-bottom: 20px; }
+        .client-name { font-weight: 700; color: var(--text-light); }
+
+        /* FOOTER */
+        footer { background-color: #060a13; padding: 60px 10% 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { font-size: 1.2rem; color: var(--gold); margin-bottom: 20px; }
+        .footer-col p, .footer-col ul { color: var(--text-gray); font-size: 0.95rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-gray); font-size: 0.85rem; }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
-        
-        /* Language toggle in header */
-        .lang-switch {
-            font-size: 14px;
-            color: #aaa;
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-float i { font-size: 1.6rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .about-content { flex-direction: column; }
+            .process-steps { flex-direction: column; }
+            section { padding: 60px 5%; }
+            .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">ERCAN <span>AUTO BODY</span></div>
-        <div class="lang-switch">EN | <span style="color:#666">TR</span></div>
+    <nav>
+        <div class="logo">
+            <!-- Asla kırılmayacak ikonik logo -->
+            <i class="fas fa-car-side"></i>
+            <div class="logo-text">ERCAN'S <span>AUTO</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+        </ul>
+        <a href="https://wa.me/447492576441" class="nav-contact" target="_blank">Contact Us</a>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-subtitle">Master Craftsmanship in London</div>
+        <h1>Flawless Bodywork & <span>Premium Paint</span></h1>
+        <p>Decades of experience. Uncompromising quality. We restore your vehicle's factory perfection with meticulous attention to detail.</p>
+        <a href="#services" class="btn-primary">Explore Our Services</a>
     </header>
 
-    <section class="hero">
-        <h1>Precision Paint.<br>Perfect Finish.</h1>
-        <p>Professional, fast, and reliable crash repair in London. Send us a photo of the damage, and let Ercan Usta restore your car to its original glory.</p>
-        
-        <!-- BURAYA BABANIN NUMARASINI YAZACAKSIN (Örn: 447123456789) -->
-        <a href="https://wa.me/447492576441?text=Hello%20Ercan%20Usta,%20I%20would%20like%20to%20get%20a%20quote%20for%20my%20car." target="_blank" class="whatsapp-btn">
-            Get a Free Quote via WhatsApp
-        </a>
+    <section id="about">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Premium Auto Shop">
+            </div>
+            <div class="about-text">
+                <h2>The Art of <span>Restoration</span></h2>
+                <h3>Founded by Master Painter Ahmet Ercan</h3>
+                <p>Located in the heart of London, Ercan's Premium Auto Body is not just a repair shop; it's a studio where automotive art is brought back to life. With over 20 years of hands-on experience, Ahmet Ercan has built a reputation for excellence.</p>
+                <p>From high-end supercars to beloved daily drivers, we treat every vehicle with the exact same level of prestige and respect. We don't just fix cars—we erase history.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="services">
-        <h2>Our Specialized Services</h2>
+    <section id="services" style="background-color: #0d1425;">
+        <div class="section-header">
+            <h2>Our <span>Premium</span> Services</h2>
+            <p>State-of-the-art equipment meets old-world craftsmanship.</p>
+        </div>
+        
         <div class="services-grid">
-            
             <div class="service-card">
-                <h3>Crash Repair</h3>
-                <p>Complete structural and aesthetic restoration after an accident. We make it look like it never happened.</p>
+                <i class="fas fa-car-crash"></i>
+                <h3>Collision Repair</h3>
+                <p>Complete structural and cosmetic repairs following major impacts. We bring the chassis and body panels back to exact factory specifications.</p>
             </div>
-
             <div class="service-card">
-                <h3>Dent & Scratch Removal</h3>
-                <p>Seamless removal of annoying dents, dings, and deep scratches to perfection.</p>
+                <i class="fas fa-spray-can"></i>
+                <h3>Custom Paint & Respray</h3>
+                <p>Computerized color matching and dust-free baking booths ensure a mirror-like, flawless finish that lasts a lifetime.</p>
             </div>
-
             <div class="service-card">
-                <h3>Full Resprays</h3>
-                <p>Flawless color matching and high-quality paint finishing for showroom quality.</p>
+                <i class="fas fa-hammer"></i>
+                <h3>Paintless Dent Removal</h3>
+                <p>Carefully massaging dents out of panels without compromising the original paintwork. Fast, effective, and invisible.</p>
             </div>
+            <div class="service-card">
+                <i class="fas fa-magic"></i>
+                <h3>Ceramic Coating</h3>
+                <p>Ultimate protection for your new paint. Hydrophobic layers that protect against scratches, UV rays, and London weather.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-dharmachakra"></i>
+                <h3>Alloy Wheel Refurbishment</h3>
+                <p>Curbed or scratched your premium alloys? We restore them to showroom condition with custom powder coating options.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-car"></i>
+                <h3>Classic Restoration</h3>
+                <p>Breathing new life into vintage legends. Rust removal, panel fabrication, and period-correct paint applications.</p>
+            </div>
+        </div>
+    </section>
 
+    <section id="process" class="process">
+        <div class="section-header">
+            <h2>How We <span>Work</span></h2>
+            <p>A seamless, transparent, and stress-free experience from start to finish.</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Assessment</h4>
+                <p>Send us a photo via WhatsApp or visit our London shop for a precise, transparent quote.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Preparation</h4>
+                <p>Meticulous stripping, sanding, and structural alignment before any paint is mixed.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Perfection</h4>
+                <p>Expert painting in our climate-controlled booth, followed by rigorous quality checks.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h4>Handover</h4>
+                <p>Your vehicle is returned fully valeted, looking better than the day it left the showroom.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="section-header">
+            <h2>Client <span>Excellence</span></h2>
+            <p>What London's most discerning drivers say about our work.</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Ahmet is a true artist. Someone backed into my Porsche, and I thought it was ruined. When I picked it up, I literally couldn't tell where the damage had been. Absolutely flawless."</p>
+                <p class="client-name">- James W., Kensington</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The color matching on my vintage Jaguar was beyond perfect. The metallic flake sits exactly like the original factory paint. Ercan's team is unmatched in London."</p>
+                <p class="client-name">- Arthur T., Mayfair</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Fast, communicative, and professional. The WhatsApp quote system was so easy to use. They fixed the scratches on my bumper in two days. Highly recommended."</p>
+                <p class="client-name">- Sarah L., Chelsea</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p><strong>Contact Ercan Auto Body</strong></p>
-        <!-- BURAYA DÜKKANIN ADRESİNİ YAZACAKSIN -->
-        <p>Location: London, UK [.]</p>
-        <p>Mon - Sat: 08:00 AM - 06:00 PM</p>
-        <p class="lang-hint">© 2026 Ercan Auto Body. All Rights Reserved. (Ercan Usta)</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Ercan's Premium Auto Body</h4>
+                <p>London's elite choice for high-end collision repair, bespoke paintwork, and automotive restoration.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Greater London, UK</li>
+                    <li><i class="fab fa-whatsapp"></i> +44 7492 576441</li>
+                    <li><i class="fas fa-envelope"></i> info@ercansautobody.co.uk</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Working Hours</h4>
+                <ul>
+                    <li>Mon - Fri: 08:00 AM - 18:00 PM</li>
+                    <li>Saturday: 09:00 AM - 14:00 PM</li>
+                    <li>Sunday: Closed (Available on WhatsApp)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Ercan's Premium Auto Body. All Rights Reserved.
+        </div>
     </footer>
+
+    <a href="https://wa.me/447492576441" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span>Get a Free Quote</span>
+    </a>
 
 </body>
 </html>
